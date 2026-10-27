@@ -7,7 +7,7 @@ let brewing=false;
 const initialTubes=()=>pack.tubes;
 const base=()=>({waterVersion:pack.waterVersion,guesses:[],groups:[],mistakes:0,failedSelections:[],tubes:clone(initialTubes()),history:[],found:[],done:[false,false,false,false]});
 const key=()=>`daily-spell-v2:${dateKey}:${pack.id}`;
-function load(){pack=packs[((Math.floor((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-Date.UTC(2026,9,27))/86400000)+offset)%packs.length+packs.length)%packs.length];try{state=JSON.parse(localStorage.getItem(key()))||base()}catch{state=base()}if(state.waterVersion!==pack.waterVersion){state.tubes=clone(initialTubes());state.history=[];state.done[2]=false;state.waterVersion=pack.waterVersion;save()}input='';selection=[];source=null;path=[];message='';render()}
+function load(){pack=packs[((Math.floor((Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())-Date.UTC(2026,9,27))/86400000)+offset)%packs.length+packs.length)%packs.length];try{state=JSON.parse(localStorage.getItem(key()))||base()}catch{state=base()}if(state.waterVersion!==pack.waterVersion||!Array.isArray(state.tubes)||state.tubes.length!==pack.tubes.length){state.tubes=clone(initialTubes());state.history=[];state.done[2]=false;state.waterVersion=pack.waterVersion;save()}input='';selection=[];source=null;path=[];message='';render()}
 function save(){try{localStorage.setItem(key(),JSON.stringify(state))}catch{message='Browser storage unavailable; keep this tab open.'}}
 function finish(i){state.done[i]=true;save()}
 const titles=['Spellword','Kindred','Water Sort','Grimoire'],icons=['✦','❋','⚗','☷'];
@@ -49,7 +49,8 @@ document.addEventListener('pointerup',e=>{if(!letterDrag||e.pointerId!==letterDr
 document.addEventListener('pointercancel',()=>{if(letterDrag?.moved){path=[];render()}letterDrag=null});
 document.addEventListener('keydown',e=>{if(tab!==0||$('#guide').open||e.ctrlKey||e.metaKey||e.altKey||(e.target.tagName==='BUTTON'&&['Enter',' '].includes(e.key)))return;if(e.key==='Enter'){e.preventDefault();wordKey('↵')}else if(e.key==='Backspace'){e.preventDefault();wordKey('⌫')}else if(/^[a-z]$/i.test(e.key))wordKey(e.key.toUpperCase())});
 function syncThemeButton(){const dark=document.documentElement.dataset.theme==='dark';$('#themeToggle').textContent=dark?'☀':'☾';$('#themeToggle').setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');$('#themeToggle').setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#17221d':'#f4f0e5')}
-$('#themeToggle').onclick=()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('spellcraft-theme',theme)}catch{}syncThemeButton()};if(document.documentElement)syncThemeButton();$('#practice').onclick=()=>{if(brewing)return;offset=(offset+1)%packs.length;load()};load();
+$('#themeToggle').onclick=()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('spellcraft-theme',theme)}catch{}syncThemeButton()};if(document.documentElement)syncThemeButton();$('#practice').onclick=()=>{if(brewing)return;offset=(offset+1)%packs.length;load()};
+$('#resetProgress').onclick=()=>{if(brewing||!window.confirm('Reset all puzzle progress on this device? This cannot be undone.'))return;try{const keys=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(/^daily-spell-v[12]:/.test(k))keys.push(k)}keys.forEach(k=>localStorage.removeItem(k));state=base();save();load();message='Progress reset.';render()}catch{message='Could not reset progress. Check browser storage settings.';render()}};load();
 
 
 
