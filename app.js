@@ -48,6 +48,7 @@ document.addEventListener('pointermove',e=>{if(!letterDrag||e.pointerId!==letter
 document.addEventListener('pointerup',e=>{if(!letterDrag||e.pointerId!==letterDrag.id)return;const dragged=letterDrag.moved;letterDrag=null;if(dragged){ignoreLetterClickUntil=Date.now()+400;checkPath();save();render()}});
 document.addEventListener('pointercancel',()=>{if(letterDrag?.moved){path=[];render()}letterDrag=null});
 document.addEventListener('keydown',e=>{if(tab!==0||$('#guide').open||e.ctrlKey||e.metaKey||e.altKey||(e.target.tagName==='BUTTON'&&['Enter',' '].includes(e.key)))return;if(e.key==='Enter'){e.preventDefault();wordKey('↵')}else if(e.key==='Backspace'){e.preventDefault();wordKey('⌫')}else if(/^[a-z]$/i.test(e.key))wordKey(e.key.toUpperCase())});
-$('#help').onclick=()=>$('#guide').showModal();$('#practice').onclick=()=>{if(brewing)return;offset=(offset+1)%packs.length;load()};load();
+function syncThemeButton(){const dark=document.documentElement.dataset.theme==='dark';$('#themeToggle').textContent=dark?'☀':'☾';$('#themeToggle').setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');$('#themeToggle').setAttribute('title',dark?'Switch to light mode':'Switch to dark mode');document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#17221d':'#f4f0e5')}
+$('#themeToggle').onclick=()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('spellcraft-theme',theme)}catch{}syncThemeButton()};if(document.documentElement)syncThemeButton();$('#practice').onclick=()=>{if(brewing)return;offset=(offset+1)%packs.length;load()};load();
 
 
