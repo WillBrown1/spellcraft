@@ -1,14 +1,9 @@
 # Spellcraft
 
-Four daily puzzles: Decipher, Gather, Distill, and Inscribe.
+Four daily spellcraft puzzles: Decipher, Gather, Distill and Inscribe.
 
-A static browser game with 30 daily sets and local progress. Open index.html or serve this folder. No build step, accounts, or API keys required.
+Decipher a themed five-letter word. Gather ingredients by spotting the intruder among three connected words. Distill liquids into matching bottles. Inscribe three hidden words that form the spell's incantation.
 
-## GitHub Pages
-In repository Settings → Pages, choose Deploy from a branch, main, and /(root).
+30 daily sets. Progress is stored locally in your browser. No build step or account required; publish this folder with GitHub Pages from main, /(root).
 
-## Dictionary
-The 11,846 accepted five-letter guesses are derived from the Wordnik Wordlist, wordlist-20210729.txt, filtered to exactly five ASCII letters and uppercased. Daily answers are separately curated. Source: https://github.com/wordnik/wordlist . Its MIT license is retained in WORDNIK-LICENSE.txt and dictionary.js.
-
-Progress is stored in the current browser and is not synced between devices. The 30 sets repeat after 30 days.
-
+Dictionary: 11,846 five-letter guesses derived from the Wordnik Wordlist (wordlist-20210729.txt), https://github.com/wordnik/wordlist . Its MIT license is included in WORDNIK-LICENSE.txt and dictionary.js. Daily answers, clues, recipes and incantations are separately authored.
