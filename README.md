@@ -2,7 +2,7 @@
 
 Four daily spellcraft puzzles: Decipher, Gather, Distill and Inscribe.
 
-Decipher a themed five-letter word. Gather ingredients by spotting the intruder among three connected words. Distill liquids into matching bottles. Inscribe three hidden words that form the spell's incantation.
+Decipher a themed five-letter word. Gather ingredients by finding four connected trios in a mixed board, leaving four intruders unused. Distill liquids into matching bottles. Inscribe three hidden words in a 5×5 grid to form the spell's incantation.
 
 30 daily sets. Progress is stored locally in your browser. No build step or account required; publish this folder with GitHub Pages from main, /(root).
 

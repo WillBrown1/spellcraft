@@ -6,7 +6,7 @@ const SPELL_PACKS=[
     "warning": "May find things you hid.",
     "answer": "LIGHT",
     "clue": "A three-word instruction to reveal a route.",
-    "grid": "NYUMNAHSWYOTAEHW",
+    "grid": "RAEEEMATANHSRDYOHWELWTEAY",
     "words": [
       "SHOW",
       "THE",
@@ -94,7 +94,10 @@ const SPELL_PACKS=[
         "explanation": "A trail, breadcrumbs and footprints can mark a route. A horizon is the apparent edge of a view."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 2,
@@ -102,7 +105,7 @@ const SPELL_PACKS=[
     "warning": "Keep the windows shut.",
     "answer": "CLOUD",
     "clue": "A three-word instruction to assemble rain overhead.",
-    "grid": "SGATDOHELURLCTEA",
+    "grid": "NYACRTEAUEGPCHCSATLTDUOLE",
     "words": [
       "LET",
       "CLOUDS",
@@ -190,7 +193,10 @@ const SPELL_PACKS=[
         "explanation": "Dampen, soak and drench add moisture. Parch means to dry out."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 3,
@@ -198,7 +204,7 @@ const SPELL_PACKS=[
     "warning": "Do not cast while driving.",
     "answer": "DREAM",
     "clue": "A three-word instruction for gentler sleeping visions.",
-    "grid": "MEDNPIEIDAKKERMS",
+    "grid": "KENFDESFAIPYIAIDADNIREMSK",
     "words": [
       "KEEP",
       "DREAMS",
@@ -286,7 +292,10 @@ const SPELL_PACKS=[
         "explanation": "Guard, shield and defend protect the sleeper. Threaten does the opposite."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 4,
@@ -294,7 +303,7 @@ const SPELL_PACKS=[
     "warning": "Keep sleeves clear.",
     "answer": "FLAME",
     "clue": "A three-word instruction to restart the hearth.",
-    "grid": "BERSMTEJHEKPEAWH",
+    "grid": "KAHEEETWBMSBWEEMTPSRUAIES",
     "words": [
       "WAKE",
       "THE",
@@ -382,7 +391,10 @@ const SPELL_PACKS=[
         "explanation": "Douse, quench and extinguish end a fire. Kindle starts one; leave it out of the safety charm."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 5,
@@ -390,7 +402,7 @@ const SPELL_PACKS=[
     "warning": "Best stored out of sunlight.",
     "answer": "LUNAR",
     "clue": "A three-word instruction for keeping borrowed moonlight.",
-    "grid": "LOHLDFKAUTNOHEMO",
+    "grid": "TDRGOESHOBOASTCMONHLEHTDO",
     "words": [
       "HOLD",
       "THE",
@@ -478,7 +490,10 @@ const SPELL_PACKS=[
         "explanation": "Contain, enclose and confine keep the moonlight in. Release lets it out."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 6,
@@ -486,7 +501,7 @@ const SPELL_PACKS=[
     "warning": "Bring a void basket.",
     "answer": "APPLE",
     "clue": "A three-word instruction for the orchard.",
-    "grid": "PRUIIETRJNEFOILT",
+    "grid": "ATETFETLURIYANIDAOETECPIR",
     "words": [
       "LET",
       "FRUIT",
@@ -574,7 +589,10 @@ const SPELL_PACKS=[
         "explanation": "Ripe, mature and ready indicate the fruit can be picked. Unripe says the opposite."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 7,
@@ -582,7 +600,7 @@ const SPELL_PACKS=[
     "warning": "Never take directions from a squirrel.",
     "answer": "GROVE",
     "clue": "A three-word instruction to listen to the woodland.",
-    "grid": "ERESTHENTAHORERF",
+    "grid": "EUAISFAOCNWIASRAHEETERTHE",
     "words": [
       "HEAR",
       "THE",
@@ -670,7 +688,10 @@ const SPELL_PACKS=[
         "explanation": "Bark, sapwood and roots belong to a tree. An antler belongs to an animal."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 8,
@@ -678,7 +699,7 @@ const SPELL_PACKS=[
     "warning": "Finish what you start.",
     "answer": "QUILL",
     "clue": "A three-word instruction to fasten the text in place.",
-    "grid": "BIDONSWRDTIEHEST",
+    "grid": "DATSDLSBCRDPGCONTUWEIBHES",
     "words": [
       "BIND",
       "THESE",
@@ -766,7 +787,10 @@ const SPELL_PACKS=[
         "explanation": "First, next and finally order a sequence. Sideways describes a direction, not a point in the story."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 9,
@@ -774,7 +798,7 @@ const SPELL_PACKS=[
     "warning": "Don't forget your waders.",
     "answer": "RIVER",
     "clue": "A three-word instruction to open a crossing.",
-    "grid": "EWAEHSRTXTTPIVAR",
+    "grid": "AHREADRSTWLSPAESSRHREHDTT",
     "words": [
       "PART",
       "THE",
@@ -862,7 +886,10 @@ const SPELL_PACKS=[
         "explanation": "Waders, wellingtons and gumboots are made to keep water out. Slippers are not wading footwear."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 10,
@@ -870,7 +897,7 @@ const SPELL_PACKS=[
     "warning": "Expect pollen, best paired with an allergy potion.",
     "answer": "BLOOM",
     "clue": "A three-word instruction for closed buds.",
-    "grid": "LFERTOWSELEOSWNP",
+    "grid": "AHLETBEOOFRETWLCGEOEBNPSR",
     "words": [
       "LET",
       "FLOWERS",
@@ -958,7 +985,10 @@ const SPELL_PACKS=[
         "explanation": "Sunflower, sundrop and sunrose name plants. A sunbeam is light, not a plant."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 11,
@@ -966,7 +996,7 @@ const SPELL_PACKS=[
     "warning": "Courage is not a plan.",
     "answer": "BRAVE",
     "clue": "A three-word instruction for courage.",
-    "grid": "SREFAMAELAKWMLQV",
+    "grid": "BDELCESYRRMNCLMSALFARAEEK",
     "words": [
       "MAKE",
       "FEAR",
@@ -1054,7 +1084,10 @@ const SPELL_PACKS=[
         "explanation": "Resist, defy and withstand oppose a threat. Surrender yields to it."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 12,
@@ -1062,7 +1095,7 @@ const SPELL_PACKS=[
     "warning": "Keep out of reach of playful cats",
     "answer": "PURRS",
     "clue": "A three-word instruction to bring your companion home.",
-    "grid": "WDEYIRMFAUMAGILI",
+    "grid": "RALMADNIIFTEGUYERNMIIDEED",
     "words": [
       "GUIDE",
       "MY",
@@ -1150,7 +1183,10 @@ const SPELL_PACKS=[
         "explanation": "A registered microchip, ID tag or address on a collar can identify a pet's home. A whisker cannot supply that information."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 13,
@@ -1158,7 +1194,7 @@ const SPELL_PACKS=[
     "warning": "Bring a coat.",
     "answer": "FROST",
     "clue": "A three-word instruction for a gentle winter covering.",
-    "grid": "RLYWTPAIFSVNORET",
+    "grid": "OSLUTIMEEFWGEAOYIESRALNTE",
     "words": [
       "LAY",
       "WINTER",
@@ -1246,7 +1282,10 @@ const SPELL_PACKS=[
         "explanation": "A dusting, sprinkling or scattering is light. A deluge is overwhelming and heavy."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 14,
@@ -1254,7 +1293,7 @@ const SPELL_PACKS=[
     "warning": "Word travels fast, never tell a bird a secret.",
     "answer": "CHIRP",
     "clue": "A three-word instruction for understanding birds.",
-    "grid": "AKAAERIRPBDESSTL",
+    "grid": "SDRBTSPAIEEIEWLAACLLKSTBR",
     "words": [
       "LET",
       "BIRDS",
@@ -1342,7 +1381,10 @@ const SPELL_PACKS=[
         "explanation": "Speak, utter and voice produce a message. Overhear receives one."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 15,
@@ -1350,7 +1392,7 @@ const SPELL_PACKS=[
     "warning": "Some doors stay shut for a reason.",
     "answer": "LATCH",
     "clue": "A three-word instruction for opening the way.",
-    "grid": "RYOCEELKVNTBRUUQ",
+    "grid": "RCNRUWAKETGIRCVPDROEFDLYR",
     "words": [
       "TURN",
       "EVERY",
@@ -1412,8 +1454,8 @@ const SPELL_PACKS=[
           "STONE",
           "BOARD"
         ],
-        "intruder": "HINGE",
-        "explanation": "Keyhole, keystone and keyboard are standard compounds. Keyhinge is not."
+        "intruder": "CLOUD",
+        "explanation": "Keyhole, keystone and keyboard are standard compounds. Keycloud is not."
       },
       {
         "ingredient": "A gentle entry",
@@ -1438,7 +1480,10 @@ const SPELL_PACKS=[
         "explanation": "A hinge, knob and strike plate belong to a door. A drainpipe carries water away."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 16,
@@ -1446,7 +1491,7 @@ const SPELL_PACKS=[
     "warning": "Set an alarm first.",
     "answer": "PEACE",
     "clue": "A three-word instruction to quiet the room.",
-    "grid": "IRPFOSEOTNRTELSE",
+    "grid": "ONESIMDSROPAFENONMSTLNTEL",
     "words": [
       "LET",
       "NOISE",
@@ -1534,7 +1579,10 @@ const SPELL_PACKS=[
         "explanation": "A period, question mark or exclamation mark can close a sentence. A comma normally cannot; even written words need a place to stop."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 17,
@@ -1542,7 +1590,7 @@ const SPELL_PACKS=[
     "warning": "Carefully monitor bloodsugar during use.",
     "answer": "SUGAR",
     "clue": "A three-word instruction to add sweetness.",
-    "grid": "EESFTWIEGRKLMASE",
+    "grid": "TEEKMWDTLAHCAEIHALEFGOWSE",
     "words": [
       "MAKE",
       "LIFE",
@@ -1630,7 +1678,10 @@ const SPELL_PACKS=[
         "explanation": "Icing, frosting and sweet glaze coat baked goods. Gravel belongs on a path."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 18,
@@ -1638,7 +1689,7 @@ const SPELL_PACKS=[
     "warning": "Wear overalls, or shorts under your witch's robes.",
     "answer": "GUSTS",
     "clue": "A three-word instruction for a sailing wind.",
-    "grid": "ASCKISEZLLHAIFLT",
+    "grid": "UDGLIEASFLEILITUPAAHAEESE",
     "words": [
       "FILL",
       "THE",
@@ -1726,7 +1777,10 @@ const SPELL_PACKS=[
         "explanation": "A jib, genoa and spinnaker catch the wind. A rudder steers through water."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 19,
@@ -1734,7 +1788,7 @@ const SPELL_PACKS=[
     "warning": "Not every answer is useful.",
     "answer": "PRISM",
     "clue": "A three-word instruction for revealing what lies ahead.",
-    "grid": "ATIAHWWTWOESBUHS",
+    "grid": "TIATASCBWHCLAHWRSESWAWAOH",
     "words": [
       "SHOW",
       "WHAT",
@@ -1822,7 +1876,10 @@ const SPELL_PACKS=[
         "explanation": "Refraction, reflection and dispersion change light's direction or spread. Fermentation is a chemical process."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 20,
@@ -1830,7 +1887,7 @@ const SPELL_PACKS=[
     "warning": "Start with a small pinch.",
     "answer": "SPICE",
     "clue": "A three-word instruction for a warming meal.",
-    "grid": "KEGMEARGUPWRSPPE",
+    "grid": "DMREENTAKPDUWRSHISEUREUPP",
     "words": [
       "KEEP",
       "SUPPER",
@@ -1918,7 +1975,10 @@ const SPELL_PACKS=[
         "explanation": "A lid, insulation and a thermos help retain warmth. An ice pack cools the meal."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 21,
@@ -1926,7 +1986,7 @@ const SPELL_PACKS=[
     "warning": "Remove the garment first.",
     "answer": "WEAVE",
     "clue": "A three-word instruction for mending fabric.",
-    "grid": "OREPTNLHTIWOAHOJ",
+    "grid": "SBNIOTAEWJSSIRHHBBOAGOATT",
     "words": [
       "JOIN",
       "WHAT",
@@ -2014,7 +2074,10 @@ const SPELL_PACKS=[
         "explanation": "Warp and weft are thread directions; a shuttle carries weft. A zipper fastens a finished garment."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 22,
@@ -2022,7 +2085,7 @@ const SPELL_PACKS=[
     "warning": "Keep clear of houseplants.",
     "answer": "MAPLE",
     "clue": "A three-word instruction for autumn color.",
-    "grid": "ODLOKTGSUREENLAV",
+    "grid": "PEFUTBAEYRDETSNOLWVLGSEAE",
     "words": [
       "TURN",
       "LEAVES",
@@ -2110,7 +2173,10 @@ const SPELL_PACKS=[
         "explanation": "Apples, pears and quinces ripen in temperate orchards. Pineapple is a tropical crop, not an orchard tree fruit."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 23,
@@ -2118,7 +2184,7 @@ const SPELL_PACKS=[
     "warning": "A remedy for restless cats.",
     "answer": "SHADE",
     "clue": "A three-word instruction to animate a shadow.",
-    "grid": "ANSOCDDWEAETOLHS",
+    "grid": "LEEECTSATTSSDBNHOECAADWSD",
     "words": [
       "LET",
       "SHADOWS",
@@ -2206,7 +2272,10 @@ const SPELL_PACKS=[
         "explanation": "A hand, cardboard and a wood block block light. Clear glass transmits most of it instead of making the same opaque silhouette."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 24,
@@ -2214,7 +2283,7 @@ const SPELL_PACKS=[
     "warning": "Effects will not apply during daylight savings",
     "answer": "CHIME",
     "clue": "A three-word instruction to correct the clock.",
-    "grid": "TGIRHUAEETMOSITN",
+    "grid": "MITTEERPESIYMEAGDFBEHTAAC",
     "words": [
       "SET",
       "TIME",
@@ -2302,7 +2371,10 @@ const SPELL_PACKS=[
         "explanation": "Calibrate, regulate and tune put a mechanism in order. Neglect leaves it unattended."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 25,
@@ -2310,7 +2382,7 @@ const SPELL_PACKS=[
     "warning": "Empty your boots of frogs after use.",
     "answer": "GLADE",
     "clue": "A three-word instruction for a gentler passage.",
-    "grid": "HSSOTAPFKETMAMIZ",
+    "grid": "MKEHAAPRHDATBLETSLWSHSOFT",
     "words": [
       "MAKE",
       "PATHS",
@@ -2398,7 +2470,10 @@ const SPELL_PACKS=[
         "explanation": "Tiptoe, creep and steal can all mean to move quietly. Stomp is a heavy tread."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 26,
@@ -2406,7 +2481,7 @@ const SPELL_PACKS=[
     "warning": "Check the forecast first.",
     "answer": "WINDY",
     "clue": "A three-word instruction to summon rough weather.",
-    "grid": "HBKDMOEKTRATSEHW",
+    "grid": "HTEKAETORWSILNMDUCBEDMPEA",
     "words": [
       "WAKE",
       "THE",
@@ -2494,7 +2569,10 @@ const SPELL_PACKS=[
         "explanation": "Rumble, boom and peal can describe thunder. A whisper is deliberately quiet."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 27,
@@ -2502,7 +2580,7 @@ const SPELL_PACKS=[
     "warning": "Bees get first refusal.",
     "answer": "HONEY",
     "clue": "A three-word instruction for a sweet binding.",
-    "grid": "HHIDOTNWENIBYHPS",
+    "grid": "RSDNIIYNWBODOEISHYNTYFOHH",
     "words": [
       "BIND",
       "WITH",
@@ -2590,7 +2668,10 @@ const SPELL_PACKS=[
         "explanation": "Bind, adhere and fasten join or hold. Sever cuts apart."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 28,
@@ -2598,7 +2679,7 @@ const SPELL_PACKS=[
     "warning": "Mind the thorns.",
     "answer": "THORN",
     "clue": "A three-word instruction for a living fence.",
-    "grid": "RNSGOTULHTEAMQDR",
+    "grid": "ITOTEHAALTSENUHCSAGODRSNR",
     "words": [
       "LET",
       "THORNS",
@@ -2686,7 +2767,10 @@ const SPELL_PACKS=[
         "explanation": "Shut, sealed and barred prevent entry. Ajar means partly open."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 29,
@@ -2694,7 +2778,7 @@ const SPELL_PACKS=[
     "warning": "Let it cool before consulting.",
     "answer": "STEAM",
     "clue": "A three-word instruction to ask about the future.",
-    "grid": "THWWACHOOESIMSSV",
+    "grid": "SHHATOWCOCWEGAMNDWYEYAMUS",
     "words": [
       "SHOW",
       "WHAT",
@@ -2782,7 +2866,10 @@ const SPELL_PACKS=[
         "explanation": "Tea leaves, palm lines and tarot cards are used in divination. A shopping list records errands rather than an oracle's signs."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   },
   {
     "id": 30,
@@ -2790,7 +2877,7 @@ const SPELL_PACKS=[
     "warning": "Count them before returning.",
     "answer": "NIGHT",
     "clue": "A three-word instruction to hold a constellation together.",
-    "grid": "LCSKSOEERTNEASPW",
+    "grid": "EPLAPESEAWTKNOHACOAFRSLSE",
     "words": [
       "KEEP",
       "STARS",
@@ -2878,6 +2965,9 @@ const SPELL_PACKS=[
         "explanation": "Retain, hold and preserve keep things together or in place. Scatter sends them apart."
       }
     ],
-    "editorialVersion": 1
+    "editorialVersion": 1,
+    "gridSize": 5,
+    "gatherVersion": 2,
+    "inscribeVersion": 2
   }
 ];
