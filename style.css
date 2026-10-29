@@ -28,3 +28,6 @@
 @media(prefers-reduced-motion:reduce){.pathgrid button,nav .icon,.theme-toggle{transition:none}.trace-line polyline{filter:none}nav button:hover .icon,.theme-toggle:hover{transform:none}}
 
 .inscription-board{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.trace-line,.trace-line *{pointer-events:none}
+
+/* Only confirmed positions carry a readable rune mark. */
+.letter.correct{padding-right:11px}.tile-rune{right:2px;bottom:5px;opacity:1;color:#fff}.tile-rune svg{width:13px;height:24px}.tile-rune svg path{stroke-width:2.4}
