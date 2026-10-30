@@ -51,3 +51,6 @@
 
 /* Temporary inert card strip: all intervening games remain visible in order. */
 .card-viewport{overflow:hidden;position:relative;width:100%;min-width:0;overflow-anchor:none}.card-track{display:flex;align-items:flex-start;gap:16px;width:100%;will-change:transform}.game-snapshot{flex:0 0 100%;min-width:0;margin:0;pointer-events:none}.card-viewport .status{visibility:hidden}
+
+/* Keep clipping, shadows and compositing consistent through the card handoff. */
+.card-viewport{contain:paint;isolation:isolate;border-radius:15px;transform:translateZ(0)}.card-track{backface-visibility:hidden;transform-style:preserve-3d}.game-snapshot{backface-visibility:hidden;transform:translateZ(0)}:is(#game,.game-snapshot){box-shadow:none}
