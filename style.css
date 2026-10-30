@@ -49,8 +49,13 @@
 @media(hover:hover){.mixed-gather .tile:hover:not(.selected){border-color:var(--gold);box-shadow:inset 0 1px 0 #ffffff18,0 2px 0 #15251d15,0 0 12px #b5934815}}
 @media(prefers-reduced-motion:reduce){.mixed-gather .tile,.pathgrid button{transition:none}.bottle.selected .liquid:last-child::after{animation:none;display:none}}
 
-/* Temporary inert card strip: all intervening games remain visible in order. */
-.card-viewport{overflow:hidden;position:relative;width:100%;min-width:0;overflow-anchor:none}.card-track{display:flex;align-items:flex-start;gap:16px;width:100%;will-change:transform}.game-snapshot{flex:0 0 100%;min-width:0;margin:0;pointer-events:none}.card-viewport .status{visibility:hidden}
-
-/* Keep clipping, shadows and compositing consistent through the card handoff. */
-.card-viewport{contain:paint;isolation:isolate;border-radius:15px;transform:translateZ(0)}.card-track{backface-visibility:hidden;transform-style:preserve-3d}.game-snapshot{backface-visibility:hidden;transform:translateZ(0)}:is(#game,.game-snapshot){box-shadow:none}
+/* Page-turn prototype. The live controls stay mounted beneath inert turning leaves. */
+:root{--page-surface:#fbf9f2}[data-theme="dark"]{--page-surface:#202e25}
+.book-viewport{position:relative;width:100%;min-width:0;overflow:hidden;overflow-anchor:none;perspective:1500px;perspective-origin:0% 50%;isolation:isolate;border-radius:15px;background:var(--page-surface)}
+.book-pages{position:relative;width:100%;height:100%;transform-style:preserve-3d}
+.book-leaf{position:absolute;top:0;left:0;width:100%;transform-origin:0 50%;transform-style:preserve-3d;will-change:transform}
+.book-front{position:relative;margin:0;pointer-events:none;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(.1px)}
+.book-back{position:absolute;inset:0;border:1px solid var(--line);border-radius:15px;background:radial-gradient(ellipse at 50% 0%,#b593480a,transparent 65%),var(--page-surface);backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);pointer-events:none}
+.book-back::after{content:"";position:absolute;inset:18px;border:1px solid #b5934830;border-radius:5px;background:linear-gradient(90deg,#15251d16,transparent 12%,transparent 88%,#b5934810)}
+.page-shade{position:absolute;inset:0;border-radius:15px;background:linear-gradient(90deg,#101b15aa,transparent 65%);pointer-events:none;opacity:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(.2px)}
+.book-viewport .status{visibility:hidden}:is(#game,.game-snapshot){box-shadow:none}

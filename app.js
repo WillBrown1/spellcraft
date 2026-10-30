@@ -60,7 +60,7 @@ function pathView(){const canHint=pack.words.some(w=>!state.found.includes(w)&&(
 function wordKey(c){if(state.done[0]||state.guesses.length>=6)return;message='';if(c==='⌫')input=input.slice(0,-1);else if(c==='↵'){if(input.length!==5)message='Enter five letters.';else if(!dictionary.has(input))message='Not in the dictionary. Try another five-letter word.';else{const revealed=[...input].map((c,i)=>c===pack.answer[i]&&!state.guesses.some(g=>g[i]===c)?i:-1).filter(i=>i>=0);effect('guess',{row:state.guesses.length,revealed});state.guesses.push(input);if(input===pack.answer){finish(0);message='Correct.'}else if(state.guesses.length===6)message='The word was '+pack.answer+'.';input='';save()}}else if(/^[A-Z]$/.test(c)&&input.length<5)input+=c;render()}
 function reservePuzzleSpace(){const section=$('.games'),tabs=$('#tabs'),safeTop=parseFloat(getComputedStyle(tabs).top)||16,height=window.visualViewport?.height||window.innerHeight;document.body.style.paddingBottom=Math.max(0,height-section.offsetHeight-safeTop)+'px'}
 function centerPuzzle(){requestAnimationFrame(()=>requestAnimationFrame(()=>{reservePuzzleSpace();$('.games').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start',inline:'nearest'})}))}
-// Slide through the ordered cards while the live game stays mounted and inactive.
+// A single readable page at rest; inert copies turn around the left-hand binding.
 function slideToPuzzle(next){
  if(brewing||!Number.isInteger(next)||next<0||next>=titles.length)return;
  if(sliding){queuedTab=next;return}
@@ -69,14 +69,18 @@ function slideToPuzzle(next){
  if(!game.animate||typeof window==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches){tab=next;message='';render();if(typeof window!=='undefined')centerPuzzle();return}
  const width=game.getBoundingClientRect().width,oldHeight=game.getBoundingClientRect().height;
  tab=next;message='';render();sliding=true;slideWidth=width;
- const viewport=document.createElement('div'),track=document.createElement('div');viewport.className='card-viewport';viewport.setAttribute('aria-hidden','true');viewport.inert=true;track.className='card-track';viewport.append(track);viewport.style.width=width+'px';track.style.width=width+'px';
- for(let i=0;i<titles.length;i++){const card=document.createElement('article');card.className='game-snapshot';card.style.flexBasis=width+'px';card.innerHTML=gameMarkup(i);track.append(card)}
+ const viewport=document.createElement('div'),pages=document.createElement('div');viewport.className='book-viewport';viewport.setAttribute('aria-hidden','true');viewport.inert=true;pages.className='book-pages';viewport.append(pages);viewport.style.width=width+'px';
+ const leaves=[];
+ for(let i=0;i<titles.length;i++){const leaf=document.createElement('div'),front=document.createElement('article'),back=document.createElement('div'),shade=document.createElement('div');leaf.className='book-leaf';leaf.style.visibility='hidden';front.className='game-snapshot book-front';front.innerHTML=gameMarkup(i);back.className='book-back';shade.className='page-shade';leaf.append(front,back,shade);pages.append(leaf);leaves.push({leaf,shade})}
  game.parentNode.insertBefore(viewport,game);game.style.display='none';
- const targetHeight=track.children[next].getBoundingClientRect().height,stride=width+16,duration=260+Math.abs(next-from)*90;
- viewport.style.height=Math.max(oldHeight,targetHeight)+'px';track.style.transform='translate3d('+(-next*stride)+'px,0,0)';
- const movement=track.animate([{transform:'translate3d('+(-from*stride)+'px,0,0)'},{transform:'translate3d('+(-next*stride)+'px,0,0)'}],{duration,easing:'cubic-bezier(.22,.61,.36,1)'});
- let cleaned=false;const cleanup=()=>{if(cleaned)return;cleaned=true;stopSlide=null;movement.cancel();viewport.remove();game.style.display='';sliding=false;if(document.body?.style)reservePuzzleSpace();const pending=queuedTab;queuedTab=null;if(pending!==null&&pending!==tab)slideToPuzzle(pending)};
- stopSlide=cleanup;movement.finished.catch(()=>{}).then(cleanup);centerPuzzle();
+ const direction=next>from?1:-1,distance=Math.abs(next-from),duration=distance===1?520:260;
+ viewport.style.height=Math.max(oldHeight,...leaves.slice(Math.min(from,next),Math.max(from,next)+1).map(p=>p.leaf.getBoundingClientRect().height))+'px';
+ const animations=[];let cleaned=false;
+ const cleanup=()=>{if(cleaned)return;cleaned=true;stopSlide=null;animations.forEach(a=>a.cancel());viewport.remove();game.style.display='';sliding=false;if(document.body?.style)reservePuzzleSpace();const pending=queuedTab;queuedTab=null;if(pending!==null&&pending!==tab)slideToPuzzle(pending)};
+ const turn=index=>{if(cleaned)return;const after=index+direction,current=leaves[index],following=leaves[after],turning=direction===1?current:following,under=direction===1?following:current;under.leaf.style.visibility='visible';under.leaf.style.zIndex='1';under.leaf.style.transform='rotateY(0deg)';turning.leaf.style.visibility='visible';turning.leaf.style.zIndex='2';const first=direction===1?'rotateY(0deg)':'rotateY(-180deg)',last=direction===1?'rotateY(-180deg)':'rotateY(0deg)';turning.leaf.style.transform=last;
+ const movement=turning.leaf.animate([{transform:first},{transform:'rotateY(-90deg)',offset:.5},{transform:last}],{duration,easing:'cubic-bezier(.4,0,.25,1)'}),shadow=turning.shade.animate([{opacity:0},{opacity:.65,offset:.5},{opacity:0}],{duration,easing:'ease-in-out'});animations.push(movement,shadow);shadow.finished.catch(()=>{});
+ movement.finished.then(()=>{if(cleaned)return;current.leaf.style.visibility='hidden';following.leaf.style.visibility='visible';following.leaf.style.transform='rotateY(0deg)';following.leaf.style.zIndex='1';if(after===next)cleanup();else turn(after)}).catch(()=>{if(!cleaned)cleanup()})};
+ stopSlide=cleanup;turn(from);centerPuzzle();
 }
 if(typeof window!=='undefined')window.addEventListener?.('resize',()=>{const section=$('.games');if(stopSlide&&section&&Math.abs(section.getBoundingClientRect().width-slideWidth)>1)stopSlide?.()});
 $('#tabs').onclick=e=>{const b=e.target.closest('[data-tab]');if(b)slideToPuzzle(+b.dataset.tab)};
