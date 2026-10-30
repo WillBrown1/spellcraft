@@ -11,9 +11,11 @@ function load(){pack=packs[((Math.floor((Date.UTC(now.getFullYear(),now.getMonth
 function save(){try{localStorage.setItem(key(),JSON.stringify(state))}catch{message='Browser storage unavailable; keep this tab open.'}}
 function finish(i){if(!state.done[i])effect('finish',{all:state.done.filter(Boolean).length===3});state.done[i]=true;save()}
 
-// Each day's alphabet uses a consistent set of drawn glyphs, including repeated letters.
-function rune(letter){const n=(letter.charCodeAt(0)-65+pack.id*7)%26;const branches=['M16 8L6 15','M16 8L26 15','M16 18L6 25','M16 18L26 25','M16 28L6 35'];return '<svg viewBox="0 0 32 44" aria-hidden="true"><path d="M16 4V40 '+branches.filter((_,i)=>(n+1)&(1<<i)).join(' ')+'"/></svg>'}
-function cipherView(){return '<div class="cipher" aria-label="Rune inscription. Correctly placed letters translate the matching rune.">'+[...pack.answer].map((c,i)=>{const known=state.guesses.some(g=>Rules.score(g,pack.answer)[i]==='correct');return '<div class="cipher-letter '+(known?'translated':'')+'" data-cipher="'+i+'">'+rune(c)+'<span>'+ (known?c:'·')+'</span></div>'}).join('')+'</div><p class="cipher-caption">Correct placements translate the runes.</p>'}
+// A daily Fisher-Yates permutation stays stable on refresh and preserves repeated letters.
+const runeAlphabets=new Map();
+function runeAlphabet(id,day=dateKey){const key=day+':'+id;if(!runeAlphabets.has(key)){const letters=Array.from({length:26},(_,i)=>i);let seed=hash('runes-v2:'+key)||1;for(let i=25;i>0;i--){seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;const j=Math.floor((seed>>>0)/4294967296*(i+1));[letters[i],letters[j]]=[letters[j],letters[i]]}runeAlphabets.set(key,letters)}return runeAlphabets.get(key)}
+function rune(letter){const n=runeAlphabet(pack.id)[letter.charCodeAt(0)-65];const branches=['M16 8L6 15','M16 8L26 15','M16 18L6 25','M16 18L26 25','M16 28L6 35'];return '<svg viewBox="0 0 32 44" aria-hidden="true"><path d="M16 4V40 '+branches.filter((_,i)=>(n+1)&(1<<i)).join(' ')+'"/></svg>'}
+function cipherView(){return '<div class="cipher" aria-label="Rune inscription.">'+[...pack.answer].map((c,i)=>{const known=state.guesses.some(g=>Rules.score(g,pack.answer)[i]==='correct');return '<div class="cipher-letter '+(known?'translated':'')+'" data-cipher="'+i+'">'+rune(c)+'<span>'+ (known?c:'·')+'</span></div>'}).join('')+'</div>'}
 let visualEvents=[];
 function effect(type,data={}){visualEvents.push({type,...data})}
 function playEffects(){const events=visualEvents.splice(0),game=$('#game');if(!game.querySelectorAll||typeof window==='undefined'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
