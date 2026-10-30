@@ -36,8 +36,8 @@
 @media(max-width:850px){#tabs{isolation:isolate;box-shadow:none}#tabs::before{content:"";position:absolute;bottom:0;left:0;width:100%;height:calc(100% + env(safe-area-inset-top,0px) + 16px);background:var(--paper);box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax 0);z-index:-1;pointer-events:none}}
 
 /* Visual polish only: fine metalwork, tactile tiles and a selected-potion shimmer. */
-#game,.game-snapshot{position:relative;background-image:radial-gradient(ellipse at 50% 0%,#b593480a,transparent 65%)}
-#game::before,.game-snapshot::before{content:"";position:absolute;inset:7px;border:1px solid #b5934826;border-radius:10px;pointer-events:none}
+:is(#game,.game-snapshot){position:relative;background-image:radial-gradient(ellipse at 50% 0%,#b593480a,transparent 65%)}
+:is(#game,.game-snapshot)::before{content:"";position:absolute;inset:7px;border:1px solid #b5934826;border-radius:10px;pointer-events:none}
 .gamehead h2::after{content:"";display:block;width:70px;height:5px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);clip-path:polygon(0 40%,43% 40%,50% 0,57% 40%,100% 40%,100% 60%,57% 60%,50% 100%,43% 60%,0 60%);opacity:.8}
 .mixed-gather .tile,.pathgrid button{box-shadow:inset 0 1px 0 #ffffff18,0 2px 0 #15251d15;transition:background .18s,box-shadow .18s,border-color .18s}
 .mixed-gather .tile.selected{box-shadow:inset 0 0 0 1px var(--gold),0 0 12px #b5934826}
