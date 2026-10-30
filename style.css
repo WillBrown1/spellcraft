@@ -34,3 +34,17 @@
 
 /* Mask scrolled content above the mobile tabs without changing layout. */
 @media(max-width:850px){#tabs{isolation:isolate;box-shadow:none}#tabs::before{content:"";position:absolute;bottom:0;left:0;width:100%;height:calc(100% + env(safe-area-inset-top,0px) + 16px);background:var(--paper);box-shadow:0 0 0 100vmax var(--paper);clip-path:inset(0 -100vmax 0);z-index:-1;pointer-events:none}}
+
+/* Visual polish only: fine metalwork, tactile tiles and a selected-potion shimmer. */
+#game{position:relative;background-image:radial-gradient(ellipse at 50% 0%,#b593480a,transparent 65%)}
+#game::before{content:"";position:absolute;inset:7px;border:1px solid #b5934826;border-radius:10px;pointer-events:none}
+.gamehead h2::after{content:"";display:block;width:70px;height:5px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);clip-path:polygon(0 40%,43% 40%,50% 0,57% 40%,100% 40%,100% 60%,57% 60%,50% 100%,43% 60%,0 60%);opacity:.8}
+.mixed-gather .tile,.pathgrid button{box-shadow:inset 0 1px 0 #ffffff18,0 2px 0 #15251d15;transition:background .18s,box-shadow .18s,border-color .18s}
+.mixed-gather .tile.selected{box-shadow:inset 0 0 0 1px var(--gold),0 0 12px #b5934826}
+.inscription-board::before{content:"";position:absolute;inset:-8px;border:1px solid #b5934840;border-radius:9px;background:radial-gradient(circle at 0 0,var(--gold) 0 2px,transparent 3px),radial-gradient(circle at 100% 0,var(--gold) 0 2px,transparent 3px),radial-gradient(circle at 0 100%,var(--gold) 0 2px,transparent 3px),radial-gradient(circle at 100% 100%,var(--gold) 0 2px,transparent 3px);pointer-events:none}
+.pathgrid button.selected{box-shadow:inset 0 0 0 1px var(--gold),inset 0 0 17px #b5934833}
+.letter:empty{box-shadow:inset 0 2px 4px #15251d0a}
+.liquid{position:relative;overflow:hidden}.bottle.selected .liquid:last-child::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,#ffffff65 45%,transparent 75%);transform:translateX(-110%);animation:potion-sheen 1.6s ease-in-out 2;pointer-events:none}
+@keyframes potion-sheen{0%,15%{transform:translateX(-110%)}85%,100%{transform:translateX(110%)}}
+@media(hover:hover){.mixed-gather .tile:hover:not(.selected){border-color:var(--gold);box-shadow:inset 0 1px 0 #ffffff18,0 2px 0 #15251d15,0 0 12px #b5934815}}
+@media(prefers-reduced-motion:reduce){.mixed-gather .tile,.pathgrid button{transition:none}.bottle.selected .liquid:last-child::after{animation:none;display:none}}
