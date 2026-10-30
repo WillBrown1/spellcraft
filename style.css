@@ -59,3 +59,6 @@
 .book-back::after{content:"";position:absolute;inset:18px;border:1px solid #b5934830;border-radius:5px;background:linear-gradient(90deg,#15251d16,transparent 12%,transparent 88%,#b5934810)}
 .page-shade{position:absolute;inset:0;border-radius:15px;background:linear-gradient(90deg,#101b15aa,transparent 65%);pointer-events:none;opacity:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(.2px)}
 .book-viewport .status{visibility:hidden}:is(#game,.game-snapshot){box-shadow:none}
+
+/* Forward turns peel diagonally from the top-right corner; backward turns retain their hinge. */
+.peeling .book-front{transform:none;will-change:clip-path}.peeling .book-back{border:0;border-radius:0;transform:translateZ(.4px);background:linear-gradient(135deg,#15251d38,var(--page-surface) 42%,var(--page-surface) 65%,#b5934833);will-change:clip-path}.peeling .book-back::after{display:none}.peeling .page-shade{transform:translateZ(.5px);background:linear-gradient(135deg,transparent 35%,#101b1570);will-change:clip-path,opacity}
